@@ -26,7 +26,7 @@ COPY src ./src
 RUN mvn -q -DskipTests clean package
 
 # Run stage
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:25.0.2_10-jre
 WORKDIR /app
 # copy built jar (use wildcard if your jar name may vary)
 COPY --from=builder /build/target/*.jar /app/app.jar
